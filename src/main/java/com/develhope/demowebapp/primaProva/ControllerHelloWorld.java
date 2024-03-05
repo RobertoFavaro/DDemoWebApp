@@ -1,4 +1,4 @@
-package com.develhope.demowebapp;
+package com.develhope.demowebapp.primaProva;
 
 import org.springframework.web.bind.annotation.*;
 

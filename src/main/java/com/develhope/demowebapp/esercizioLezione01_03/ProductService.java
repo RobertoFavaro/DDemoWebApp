@@ -1,7 +1,9 @@
 package com.develhope.demowebapp.esercizioLezione01_03;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public class ProductService {
     private List<Product> listaproduct;
     public Product addProduct(Product product){
@@ -26,7 +28,16 @@ public class ProductService {
         return listaproduct;
     }
 
-
+    public void updateProduct(Product product){
+        for(Product product1 : listaproduct){
+            if(product1.getId().equals(product.getId())){
+                product1.setId(product.getId());
+                product1.setDescrizione(product.getDescrizione());
+                product1.setNome(product.getNome());
+                product1.setPrezzo(product.getPrezzo());
+            }
+        }
+    }
     public Product deleteProduct(Product product){
         listaproduct.remove(product);
         return product;
